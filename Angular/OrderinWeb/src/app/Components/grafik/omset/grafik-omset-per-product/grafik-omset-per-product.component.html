@@ -1,0 +1,65 @@
+<ejs-tab id="element">
+  <e-tabitems>
+    <e-tabitem [header]='headerText[0]' >
+      <ng-template #content>
+
+        <div class="float-end w-25 mt-3">
+          <ejs-datepicker #tglStartBar id="tglStartBar" [value]='tglStart' (change)='setTgl($event,"start")' placeholder='Tanggal mulai' format='dd MMMM yyyy'></ejs-datepicker>
+          <ejs-datepicker #tglEndBar id="tglEndBar" [value]='tglEnd' (change)='setTgl($event,"end")' placeholder='Tanggal selesai' format='dd MMMM yyyy'></ejs-datepicker>
+          <button class="btn btn-outline-primary btn-sm" (click)='filter()'>
+            <i class="fas fa-filter"></i> Filter
+          </button>
+        </div>
+        <div>
+          <ejs-chart #chart id="bar-omset" width='80%' align='center' [primaryXAxis]='primaryXAxis'
+          [primaryYAxis]='primaryYAxis' [title]='title'
+          [tooltip]='tooltip'
+          [useGroupingSeparator]='true'>
+          <e-series-collection>
+            <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Total Omset'
+            pointColorMapping='color'></e-series>
+          </e-series-collection>
+        </ejs-chart>
+      </div>
+    </ng-template>
+  </e-tabitem>
+  <e-tabitem [header]='headerText[1]' >
+    <ng-template #content>
+
+
+      <div class="float-end w-25 mt-3">
+        <ejs-datepicker #tglStartPie id="tglStartPie" [value]='tglStart' (change)='setTgl($event,"start")' placeholder='Tanggal mulai' format='dd MMMM yyyy'></ejs-datepicker>
+        <ejs-datepicker #tglEndPie id="tglEndPie" [value]='tglEnd' (change)='setTgl($event,"end")' placeholder='Tanggal selesai' format='dd MMMM yyyy'></ejs-datepicker>
+        <button class="btn btn-outline-primary btn-sm" (click)='filter()'>
+          <i class="fas fa-filter"></i> Filter
+        </button>
+      </div>
+      <div class="float-start mt-5">
+        <ejs-accumulationchart id="pie-omset"
+        width='80%'
+        [title]='title'
+        [tooltip]='tooltip'>
+        <e-accumulation-series-collection>
+          <e-accumulation-series
+          name='Jumlah Omset'
+          [dataSource]='pieData'
+          xName='x' yName='y'
+          startAngle="0"
+          endAngle="360"
+          innerRadius="0%"
+          radius="70%"
+          explode='true'
+          explodeOffset='10%'
+          [explodeIndex]='0'
+          pointColorMapping='color'
+          [dataLabel]='datalabel'>
+        </e-accumulation-series>
+      </e-accumulation-series-collection>
+    </ejs-accumulationchart>
+  </div>
+
+</ng-template>
+</e-tabitem>
+</e-tabitems>
+</ejs-tab>
+

@@ -1,0 +1,21 @@
+
+<div class="float-end w-25 mt-3">
+  <ejs-datepicker #tglStartBar id="tglStartBar" [value]='tglStart' (change)='setTgl($event,"start")' placeholder='Tanggal mulai' format='dd MMMM yyyy'></ejs-datepicker>
+  <ejs-datepicker #tglEndBar id="tglEndBar" [value]='tglEnd' (change)='setTgl($event,"end")' placeholder='Tanggal selesai' format='dd MMMM yyyy'></ejs-datepicker>
+  <button class="btn btn-outline-primary btn-sm" (click)='filter()'>
+    <i class="fas fa-filter"></i> Filter
+  </button>
+</div>
+<div>
+  <ejs-chart #chart id="bar-ongkir" width='80%'
+  align='center' [primaryXAxis]='primaryXAxis'
+  [primaryYAxis]='primaryYAxis' [title]='title'
+  [tooltip]='tooltip'
+  [useGroupingSeparator]='true'>
+  <e-series-collection>
+    <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Ongkos Kirim'
+    pointColorMapping='color'></e-series>
+  </e-series-collection>
+</ejs-chart>
+</div>
+

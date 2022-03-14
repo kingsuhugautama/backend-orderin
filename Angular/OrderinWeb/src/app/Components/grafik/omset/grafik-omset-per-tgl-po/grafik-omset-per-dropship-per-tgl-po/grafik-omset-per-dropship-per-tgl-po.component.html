@@ -1,0 +1,32 @@
+
+
+<ejs-accumulationchart *ngIf="!isGrafikProduk && tglPo" id="omset-pertgl-detail"
+width='100%'
+[title]='title'
+[tooltip]='tooltip'
+[useGroupingSeparator]='true'
+(pointClick)='showDetail($event)'>
+<e-accumulation-series-collection>
+  <e-accumulation-series
+  name='Jumlah Omset'
+  [dataSource]='pieData'
+  xName='x' yName='y'
+  startAngle="0"
+  endAngle="360"
+  innerRadius="0%"
+  radius="70%"
+  explode='true'
+  explodeOffset='10%'
+  [explodeIndex]='0'
+  pointColorMapping='color'
+  [dataLabel]='datalabel'>
+</e-accumulation-series>
+</e-accumulation-series-collection>
+</ejs-accumulationchart>
+
+
+<div *ngIf="isGrafikProduk" class="" style="width: 80vw;">
+  <app-grafik-peringkat-produk-per-dropship #grafikProdukFavorit
+  [dropshipName]='dropshipName'
+  [dropshipId]='dropshipId'></app-grafik-peringkat-produk-per-dropship>
+</div>

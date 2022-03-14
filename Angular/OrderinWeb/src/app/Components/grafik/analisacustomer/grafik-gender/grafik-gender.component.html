@@ -1,0 +1,30 @@
+<div class="float-end w-25 mt-3">
+  <ejs-datepicker #tglStartPie id="tglStartPie" [value]='tglStart' (change)='setTgl($event,"start")' placeholder='Tanggal mulai' format='dd MMMM yyyy'></ejs-datepicker>
+  <ejs-datepicker #tglEndPie id="tglEndPie" [value]='tglEnd' (change)='setTgl($event,"end")' placeholder='Tanggal selesai' format='dd MMMM yyyy'></ejs-datepicker>
+  <button class="btn btn-outline-primary btn-sm" (click)='filter()'>
+    <i class="fas fa-filter"></i> Filter
+  </button>
+</div>
+<div class="float-start">
+<ejs-accumulationchart id="chart-container"
+width='80%'
+title='Analisa Customer Berdasarkan Jenis Kelamin'
+[enableAnimation]='true'
+[tooltip]='tooltip'>
+<e-accumulation-series-collection>
+  <e-accumulation-series name='Jenis Kelamin'
+  pointColorMapping='color'
+  [dataSource]='piedata'
+  xName='x' yName='y'
+  [dataLabel]='datalabel'
+  [startAngle]="startAngle"
+  [endAngle]="endAngle"
+  innerRadius="0%"
+  radius="70%"
+  [explode]='explode'
+  explodeOffset='10%'
+   [explodeIndex]='0' >
+</e-accumulation-series>
+</e-accumulation-series-collection>
+</ejs-accumulationchart>
+</div>

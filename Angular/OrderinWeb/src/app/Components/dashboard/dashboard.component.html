@@ -1,0 +1,129 @@
+<ngx-spinner name="dashboardSpinner"
+bdColor = "rgba(0, 0, 0, 0.8)"
+size = "medium" color = "#fff"
+type = "square-jelly-box" [fullScreen] = "true">
+<p style="color: white; font-family: 'Serif'; font-size: 1.3em;" > Loading . . . </p></ngx-spinner>
+
+<ngx-spinner name="ajaxSpinner"
+bdColor = "rgba(0, 0, 0, 0)"
+size = "medium" color = "rgba(21,162,246,0.8)"
+type = "square-jelly-box" [fullScreen] = "true">
+<p style="color: grey; font-family: 'Serif'; font-size: 1.3em;" > Loading . . . </p></ngx-spinner>
+
+<div id="wrapper">
+  <div class="col-lg-12 col-sm-12 col-md-12" id="sidebar-section">
+    <div class="col-lg-12 col-sm-12 col-md-12">
+      <!--header-section  declaration -->
+      <div class="main-header" id="header-section">
+        <ul class="header-list">
+          <li class="float-left header-style" id="hamburger" (click)="toggleSideBar()">
+            <i class="fas fa-bars"></i>
+          </li>
+          <li class="float-left header-style nav-pane"><b>Selamat datang, {{userData.merchantname}}</b></li>
+          <li (click)='showUserBar()' class="float-end header-style" style="right: 0px !important;">
+
+            <img src="{{userData.logoimageurl}}"
+            width="40"
+            height="40"
+            class="border border-4 p-1 border-white rounded-circle" style="margin-top: -5px;">
+          </li>
+        </ul>
+      </div>
+
+      <div id="user-bar" *ngIf="userBarOpen"
+      class="rounded shadow-sm
+      border border-1 border-white p-2
+      float-end" style="width:300px; background-color: #6495ED;
+      top: 60px; right: 10px; position:absolute; z-index: 999;">
+      <div id="user-bar-triangle">
+      </div>
+      <div class="mb-2">
+        <div class="row">
+          <div class="col-lg-2">
+
+            <img src="{{userData.logoimageurl}}"
+            width="60"
+            height="60"
+            class="border border-4 p-1 border-white rounded-circle">
+
+          </div>
+          <div class="col-lg-10 p-3">
+            <span class="user-name">
+              <b>{{userData.merchantname}}</b>
+
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <hr>
+      <div>
+        <span class="badge bg-success m-1"><i title="Rating Produk" class="fas fa-gifts"></i> &nbsp;
+          <i class="fas fa-star"></i>
+          {{userData.avgratingproduct}}
+        </span>
+
+        <span class="badge bg-danger m-1"><i title="Rating Pengemasan" class="fas fa-box"></i> &nbsp;
+          <i class="fas fa-star"></i>
+          {{userData.avgratingpackaging}}
+        </span>
+
+        <span class="badge bg-warning m-1"><i title="Rating Pengiriman" class="fas fa-shipping-fast"></i> &nbsp;
+          <i class="fas fa-star"></i>
+          {{userData.avgratingdelivering}}
+        </span>
+      </div>
+
+      <ul id="user-bar-menu" style="list-style: none; padding-left: 0;">
+        <li>
+          <a href="#">
+            <i class="fas fa-user-circle"></i>
+            Edit Profile</a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-key"></i>  Ubah Password</a>
+            </li>
+
+            <li>
+              <a href="/logout">
+
+                <i class="fas fa-sign-out-alt"></i>
+                Keluar</a>
+              </li>
+            </ul>
+          </div>
+
+          <!--end of header-section  declaration -->
+          <!-- sidebar element declaration -->
+          <ejs-sidebar id="sidebar-treeview" class="dock-menu" #sidebarTreeviewInstance [enableDock]='enableDock'
+          [width]='width' [dockSize]='dockSize' (created)="onCreated($event)" style="visibility: hidden;"
+          [mediaQuery]='mediaQuery' [target]='target' (close)="onClose($event)">
+          <div class="main-menu">
+            <div>
+              <!-- Treevie element declaration -->
+              <ejs-treeview id="main-treeview" #treeviewInstance [fields]='field'
+              expandOn='Click'
+              (nodeSelected)='navigateRoute($event)'></ejs-treeview>
+
+            </div>
+          </div>
+        </ejs-sidebar>
+        <!-- end of sidebar element -->
+
+        <!-- main-content declaration -->
+        <div class="main-content" id="main-text" (click)='closeUserBar()'>
+          <div class="sidebar-content">
+            <!-- <div class="bg-primary">
+              {{title}}
+            </div> -->
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+        <!-- end of main-content -->
+      </div>
+    </div>
+  </div>

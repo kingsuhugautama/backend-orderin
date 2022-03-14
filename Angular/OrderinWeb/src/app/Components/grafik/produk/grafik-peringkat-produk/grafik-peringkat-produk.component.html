@@ -1,0 +1,24 @@
+<ejs-accumulationchart id="pie-produk"
+width='80%'
+[legendSettings]='legendSettings'
+title='Analisa Peringkat Produk Favorit'
+[enableAnimation]='true'
+[tooltip]='tooltip'>
+<e-accumulation-series-collection>
+
+  <e-accumulation-series
+  name='Produk Favorit'
+  [dataSource]='piedata'
+  xName='x' yName='y'
+  startAngle="0"
+  endAngle="360"
+  innerRadius="0%"
+  radius="70%"
+  explode='true'
+  explodeOffset='10%'
+  [explodeIndex]='0'
+  pointColorMapping='color'
+  [dataLabel]='datalabel'>
+</e-accumulation-series>
+</e-accumulation-series-collection>
+</ejs-accumulationchart>

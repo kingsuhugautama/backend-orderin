@@ -1,0 +1,16 @@
+E:\MAT\API\Projects\OrderIn\OrderInBackend\bin\Release\net5.0\OrderInBackend.deps.json
+E:\MAT\API\Projects\OrderIn\OrderInBackend\bin\Release\net5.0\OrderInBackend.dll
+E:\MAT\API\Projects\OrderIn\OrderInBackend\bin\Release\net5.0\ref\OrderInBackend.dll
+E:\MAT\API\Projects\OrderIn\OrderInBackend\bin\Release\net5.0\OrderInBackend.pdb
+E:\MAT\API\Projects\OrderIn\OrderInBackend\bin\Release\net5.0\DapperPostgreeLib.dll
+E:\MAT\API\Projects\OrderIn\OrderInBackend\bin\Release\net5.0\DapperPostgreeLib.pdb
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.csprojAssemblyReference.cache
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.GeneratedMSBuildEditorConfig.editorconfig
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.AssemblyInfoInputs.cache
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.AssemblyInfo.cs
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.csproj.CoreCompileInputs.cache
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.csproj.CopyComplete
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.dll
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\ref\OrderInBackend.dll
+E:\MAT\API\Projects\OrderIn\OrderInBackend\obj\Release\net5.0\OrderInBackend.pdb
+E:\MAT\API\Projects\OrderIn\OrderInBackend\bin\Release\net5.0\firebaseKey.json

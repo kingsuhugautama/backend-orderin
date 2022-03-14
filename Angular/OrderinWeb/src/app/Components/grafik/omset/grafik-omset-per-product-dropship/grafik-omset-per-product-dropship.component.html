@@ -1,0 +1,43 @@
+
+<!-- {{dropshipId}} {{dropshipLabel}} {{chartType}} -->
+
+<div *ngIf="dropshipId > 0 && dropshipLabel != '' && chartType == 'bar'">
+  <ejs-chart #chart id="bar-omset-detail" width='80%' align='center' [primaryXAxis]='primaryXAxis'
+  [primaryYAxis]='primaryYAxis' [title]='title'
+  [tooltip]='tooltip'
+  [useGroupingSeparator]='true'>
+  <e-series-collection>
+    <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Total Omset'
+    pointColorMapping='color'></e-series>
+  </e-series-collection>
+</ejs-chart>
+
+</div>
+
+
+<div *ngIf="dropshipId > 0 && dropshipLabel != '' && chartType == 'pie'">
+
+  <ejs-accumulationchart id="pie-omset-detail"
+  width='80%'
+  [title]='title'
+  [tooltip]='tooltip'>
+  <e-accumulation-series-collection>
+    <e-accumulation-series
+    name='Jumlah Omset'
+    [dataSource]='pieData'
+    xName='x' yName='y'
+    startAngle="0"
+    endAngle="360"
+    innerRadius="0%"
+    radius="70%"
+    explode='true'
+    explodeOffset='10%'
+    [explodeIndex]='0'
+    pointColorMapping='color'
+    [dataLabel]='datalabel'>
+  </e-accumulation-series>
+</e-accumulation-series-collection>
+</ejs-accumulationchart>
+
+</div>
+
