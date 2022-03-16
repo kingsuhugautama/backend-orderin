@@ -88,7 +88,8 @@ namespace OrderInBackend.Dao.Setup
                         p_contactphone = data.contactphone,
                         p_radius = data.radius,
                         p_isactive = data.isactive,
-                        p_ongkoskirim = data.ongkoskirim
+                        p_ongkoskirim = data.ongkoskirim,
+                        p_iscod = data.iscod
                     });
             }
             catch (Exception ex)
